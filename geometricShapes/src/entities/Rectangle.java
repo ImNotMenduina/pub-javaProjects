@@ -9,6 +9,22 @@ public class Rectangle extends Shape{
 		this.c = c;
 	}
 	
+	public Double getL() {
+		return l;
+	}
+
+	public void setL(Double l) {
+		this.l = l;
+	}
+
+	public Double getC() {
+		return c;
+	}
+
+	public void setC(Double c) {
+		this.c = c;
+	}
+
 	public Double area() {
 		return this.c * this.l;
 	}
@@ -18,7 +34,9 @@ public class Rectangle extends Shape{
 	}
 	
 	public String toString() {
-		return "Area: " + this.area() +
-			   "Perimeter: " + this.perimeter();
+		return "a: " + this.getL() + "\n" + 
+			   "b: " + this.getC() + "\n" +
+			   "Area: " + this.area() + "\n" +
+			   "Perimeter: " + this.perimeter() + "\n";
 	}
 }

@@ -25,7 +25,7 @@ public class TestShapes {
 				break;
 			case 1://Circle
 				Double radius = rand.nextDouble(10.0);
-				listOfShapes.add(new Circle(rand.nextDouble(radius), rand.nextDouble(radius)));
+				listOfShapes.add(new Circle(radius, radius));
 				break;
 			case 2: //Rectangle
 				listOfShapes.add(new Rectangle(rand.nextDouble(10.0),rand.nextDouble(10.0)));
