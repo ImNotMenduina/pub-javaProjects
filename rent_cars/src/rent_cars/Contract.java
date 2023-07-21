@@ -1,8 +1,6 @@
 package rent_cars;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class Contract {
 	private LocalDateTime start;
