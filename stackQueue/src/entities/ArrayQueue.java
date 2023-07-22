@@ -6,15 +6,14 @@ public class ArrayQueue implements Queue{
 	private int queueArray[];
 	private int arrayLenght;
 	private int finalIndex;
-	private boolean empty;
 	
 	public ArrayQueue() {
-		this.arrayLenght = 3;
+		this.arrayLenght = 3; //initial length 
 		this.queueArray = new int[arrayLenght];
 		this.finalIndex = 0;
-		this.empty = true;
 	}
 	
+	//push a element to the final
 	public void add(int n) {
 		
 		if(finalIndex != arrayLenght)
@@ -35,9 +34,10 @@ public class ArrayQueue implements Queue{
 		}
 	}	
 	
+	//pop a element from the begging
 	public void remove() {
-		if(this.empty) {
-			System.out.println("YOU cant remove");
+		if(this.isEmpty()) {
+			System.out.println("Warning: empty list, you can't remove.\n");
 		}
 		else {
 			int removed = this.queueArray[0];
@@ -49,12 +49,19 @@ public class ArrayQueue implements Queue{
 		}
 	}
 	
+	//verify is the queue is empty
+	public boolean isEmpty() {
+		if(finalIndex == 0) {
+			return true;
+		}
+		return false;
+	}
+	
+	//print queue
 	public void printQueue() {
 		for(int i=0; i<this.finalIndex; i++) {
 			System.out.printf("%d ", this.queueArray[i]);
 		}
 		System.out.println("\n");
 	}
-	
-
 }
