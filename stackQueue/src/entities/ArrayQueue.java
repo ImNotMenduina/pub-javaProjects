@@ -19,29 +19,33 @@ public class ArrayQueue implements Queue{
 		if(finalIndex != arrayLenght)
 		{
 			this.queueArray[finalIndex] = n;
-			finalIndex++;
+			this.finalIndex++;
 		}
 		else 
 		{
 			this.arrayLenght = this.arrayLenght * 2;
 			int newArray[] = new int[this.arrayLenght];
-			for(int i=0; i< this.finalIndex; i++) {
+			for(int i=0; i< this.finalIndex; i++) 
+			{
 				newArray[i] = this.queueArray[i];
 			}
 			newArray[finalIndex] = n;
 			this.queueArray = newArray;
-			finalIndex++;
+			this.finalIndex++;
 		}
 	}	
 	
 	//pop a element from the begging
 	public void remove() {
-		if(this.isEmpty()) {
+		if(this.isEmpty()) 
+		{
 			System.out.println("Warning: empty list, you can't remove.\n");
 		}
-		else {
+		else 
+		{
 			int removed = this.queueArray[0];
-			for(int i=1; i<this.finalIndex; i++) {
+			for(int i=1; i<this.finalIndex; i++) 
+			{
 				this.queueArray[i-1] = this.queueArray[i];
 			}
 			this.finalIndex--;
@@ -51,7 +55,8 @@ public class ArrayQueue implements Queue{
 	
 	//verify is the queue is empty
 	public boolean isEmpty() {
-		if(finalIndex == 0) {
+		if(finalIndex == 0) 
+		{
 			return true;
 		}
 		return false;
@@ -59,7 +64,8 @@ public class ArrayQueue implements Queue{
 	
 	//print queue
 	public void printQueue() {
-		for(int i=0; i<this.finalIndex; i++) {
+		for(int i=0; i<this.finalIndex; i++) 
+		{
 			System.out.printf("%d ", this.queueArray[i]);
 		}
 		System.out.println("\n");
