@@ -5,8 +5,6 @@ import model.services.Eccentricity;
 public class Ellipse extends Shape implements Eccentricity{
 	protected Double a; 
 	protected Double b; 
-
-	protected Eccentricity eccentricity;
 	
 	public Ellipse(Double a, Double b) {
 		this.a = a; 
