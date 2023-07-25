@@ -4,15 +4,16 @@ import java.util.Scanner;
 
 import entities.ArrayQueue;
 import entities.ArrayStack;
+import exceptions.IsEmptyException;
 
 public class Program {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IsEmptyException{
 		Scanner sc = new Scanner(System.in);
 		
 		ArrayStack newStack = new ArrayStack();
 		System.out.println("======== STACK =======\n");
-		newStack.remove();
+		//newStack.remove(); // it throws my custom exception
 		newStack.add(1);
 		newStack.add(2);
 		newStack.add(3);
@@ -39,7 +40,7 @@ public class Program {
 		newStack.remove();
 		newStack.remove();
 		newStack.printQueue();
-		newStack.remove();
+		//newStack.remove(); // it throws my custom exception
 		
 		
 		ArrayQueue newQueue = new ArrayQueue();

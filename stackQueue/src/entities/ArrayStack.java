@@ -1,5 +1,6 @@
 package entities;
 
+import exceptions.IsEmptyException;
 import model.queue.Queue;
 
 public class ArrayStack implements Queue{
@@ -7,7 +8,7 @@ public class ArrayStack implements Queue{
 	private int[] stackArray;
 	private int arrayLength;
 	
-	public ArrayStack() {
+	public ArrayStack(){
 		this.arrayLength = 3;
 		this.stackArray = new int[arrayLength];
 		this.headStack = -1;
@@ -35,11 +36,11 @@ public class ArrayStack implements Queue{
 		}
 	}
 	//pop a element from top
-	public void remove() {
+	public void remove() throws IsEmptyException {
 		int removed;
 		if(this.isEmpty()) 
 		{
-			System.out.println("Warning: empty list, you can't remove.\n");
+			throw new IsEmptyException("Warning: empty list, you can't remove.\n");
 		}
 		else if(arrayLength > 1)
 		{
